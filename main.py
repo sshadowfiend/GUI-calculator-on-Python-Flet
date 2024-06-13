@@ -15,7 +15,7 @@ def main(page: ft.Page):
         return float(n)
 
     def clear_fast(e):
-        if len(txt1.value) == 1 or txt1.value == ' Error':
+        if len(txt1.value) == 1 or txt1.value == " Error" or txt1.value.count("e") != 0 or (len(txt1.value) == 2 and txt1.value[0] == '-'):
             txt1.value = '0'
             page.update()
         else:
