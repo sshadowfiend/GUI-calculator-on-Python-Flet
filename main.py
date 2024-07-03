@@ -15,12 +15,18 @@ def main(page: ft.Page):
         return float(n)
 
     def clear_fast(e):
-        if len(txt1.value) == 1 or txt1.value == " Error" or txt1.value.count("e") != 0 or (len(txt1.value) == 2 and txt1.value[0] == '-'):
+        if any(
+                (
+                len(txt1.value) == 1,
+                txt1.value == " Error",
+                txt1.value.count("e") != 0,
+                (len(txt1.value) == 2 and txt1.value[0] == '-')
+                )
+              ):
             txt1.value = '0'
-            page.update()
         else:
             txt1.value = txt1.value[:-1]
-            page.update()
+        page.update()
 
     def clear_long(e):
         txt1.value = '0'
@@ -41,15 +47,15 @@ def main(page: ft.Page):
             pass
 
     def dot(e):
-        if txt1.value.count('.') == 0 and txt1.value.count(' ') == 0:
+        if ('.' not in txt1.value) and (' ' not in txt1.value):
             txt1.value += '.'
         page.update()
 
     def math_operations(e):
         try:
             global operation
-            operation = e.control.data
             global num1
+            operation = e.control.data
             num1 = convert(txt1.value)
             txt1.value = ' ' + txt1.value
         except ValueError:
