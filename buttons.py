@@ -2,14 +2,14 @@ import flet as ft
 
 
 class Button:
-    def __init__(self, val: str, field: ft.Text, page: ft.Page, color=ft.colors.BLUE_400, width=75):
+    def __init__(self, val: str, field: ft.Text, page: ft.Page, color=ft.colors.BLUE_400, width=75) -> None:
         self.val = val
         self.color = color
         self.width = width
         self.field = field
         self.page = page
 
-    def create_btn(self):
+    def create_btn(self) -> ft.ElevatedButton:
         txt = ft.Text(value=self.val,
                       color="WHITE",
                       text_align=ft.TextAlign.CENTER,
@@ -25,7 +25,7 @@ class Button:
 
 
 class ButtonNum(Button):
-    def create_btn(self):
+    def create_btn(self) -> ft.ElevatedButton:
         txt = ft.Text(value=self.val,
                       color="WHITE",
                       text_align=ft.TextAlign.CENTER,
@@ -40,7 +40,7 @@ class ButtonNum(Button):
                                 )
         return btn
 
-    def add(self, e):
+    def add(self, e) -> None:
         if self.field.value != '0' and self.field.value.count(' ') == 0:
             self.field.value += self.val
         else:

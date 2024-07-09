@@ -6,7 +6,7 @@ global num1
 
 def main(page: ft.Page):
 
-    def convert(n: str):
+    def convert(n: str) -> float:
         if n.count('.') == 0:
             return int(n)
         i = n.index('.')
@@ -14,7 +14,7 @@ def main(page: ft.Page):
             return int(n[:i])
         return float(n)
 
-    def clear_fast(e):
+    def clear_fast(e) -> None:
         if any(
                 (
                 len(txt1.value) == 1,
@@ -28,30 +28,30 @@ def main(page: ft.Page):
             txt1.value = txt1.value[:-1]
         page.update()
 
-    def clear_long(e):
+    def clear_long(e) -> None:
         txt1.value = '0'
         page.update()
 
-    def change(e):
+    def change(e) -> None:
         try:
             txt1.value = str(convert(txt1.value) * -1)
             page.update()
         except ValueError:
             pass
 
-    def percent(e):
+    def percent(e) -> None:
         try:
             txt1.value = str(convert(str(convert(txt1.value) / 100)))
             page.update()
         except ValueError:
             pass
 
-    def dot(e):
+    def dot(e) -> None:
         if ('.' not in txt1.value) and (' ' not in txt1.value):
             txt1.value += '.'
         page.update()
 
-    def math_operations(e):
+    def math_operations(e) -> None:
         try:
             global operation
             global num1
@@ -61,7 +61,7 @@ def main(page: ft.Page):
         except ValueError:
             pass
 
-    def equal(e):
+    def equal(e) -> None:
         num2 = convert(txt1.value)
         result = 0
         if operation == '÷':
