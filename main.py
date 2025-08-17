@@ -81,13 +81,14 @@ def main(page: ft.Page):
     page.title = "Super calculator"
     page.window_width = 365
     page.window_height = 510
+    page.fonts = {"Nunito": "Nunito.ttf"}
     page.window_resizable = False
     page.bgcolor = ft.colors.BLUE_200
     page.horizontal_alignment = "CENTER"
     page.vertical_alignment = "CENTER"
     page.update()
 
-    txt1 = ft.Text(value='0', size=52, color="WHITE", text_align=ft.TextAlign.RIGHT)
+    txt1 = ft.Text(value='0', size=52, color="WHITE", text_align=ft.TextAlign.RIGHT, font_family="Nunito")
     all_numbers = ft.Card(content=txt1, height=100, width=340, color=ft.colors.BLUE_200)
 
     btn1 = ButtonNum("1", txt1, page).create_btn()

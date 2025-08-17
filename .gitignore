@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.python-version
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment files
+.env
+.env.local
+secrets.json
+config.py
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# Build and distribution
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Byte-compiled / optimized files
+*.pyc
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# VS Code
+.vscode/settings.json
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Telegram session files (если используются)
+*.session
